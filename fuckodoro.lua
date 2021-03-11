@@ -6,12 +6,8 @@ local packets = require('packets')
 
 windower.register_event('incoming chunk', function(id, data)
 
-
-
     if id == 0x021 then
 
-        windower.add_to_chat(160, 'trade requested')
-        
         local tradeRequest = packets.parse('incoming', data)
 
         local trade = packets.new('outgoing', 0x033)
@@ -48,6 +44,3 @@ windower.register_event('incoming chunk', function(id, data)
     end
 
 end)
-
-
-
