@@ -10,9 +10,9 @@ windower.register_event('incoming chunk', function(id, data)
 
         local tradeRequest = packets.parse('incoming', data)
 
-        local trade = packets.new('outgoing', 0x033)
+        local tradeResponse = packets.new('outgoing', 0x033)
 
-        packets.inject(trade);
+        packets.inject(tradeResponse);
     
     end
 
